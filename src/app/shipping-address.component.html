@@ -1,0 +1,37 @@
+<fieldset class="slds-form--compound">
+    <legend class="slds-form-element__label">Shipping Address</legend>
+    <div class="form-element__group">
+        <div class="slds-form-element__row">
+            <div class="slds-form-element slds-size--1-of-1">
+                <label class="slds-form-element__label" attr.for="shippingStreet" >Street</label>
+                <input id="shippingStreet" class="slds-input" type="text" placeholder="SHIPPING STREET" [(ngModel)]="order.shippingStreet"/>
+            </div>
+        </div>
+        <div class="slds-form-element__row">
+            <div class="slds-form-element slds-size--1-of-2">
+                <label class="slds-form-element__label" attr.for="shippingCity">City</label>
+                <input id="shippingCity" class="slds-input" type="text" placeholder="SHIPPING CITY" [(ngModel)]="order.shippingCity"/>
+            </div>
+            <div class="slds-form-element slds-size--1-of-2">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" attr.for="shippingState">State</label>
+                    <div class="slds-form-element__control">
+                        <div class="slds-select_container">
+                            <select id="shippingState" class="slds-select" size="1" [(ngModel)]="order.shippingState">
+                                <option value='' disabled >SHIPPING STATE</option>
+                                <option *ngFor="let opt of stateOptions" [value]="opt.value">{{opt.label}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slds-form-element__row">
+            <div class="slds-form-element slds-size--1-of-2">
+                <label class="slds-form-element__label" attr.for="shippingPostalCode">Postal Code</label>
+                <input id="shippingPostalCode" class="slds-input" type="text" placeholder="SHIPPING POSTAL CODE" [(ngModel)]="order.shippingPostalCode"/>
+            </div>
+            <div class="slds-form-element slds-size--1-of-2"></div>
+        </div>
+    </div>
+</fieldset>

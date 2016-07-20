@@ -1,0 +1,37 @@
+<fieldset class="slds-form--compound">
+    <legend class="slds-form-element__label">Billing Address</legend>
+    <div class="form-element__group">
+        <div class="slds-form-element__row">
+            <div class="slds-form-element slds-size--1-of-1">
+                <label class="slds-form-element__label" attr.for="billingStreet" >Street</label>
+                <input id="billingStreet" class="slds-input" type="text" placeholder="BILLING STREET" [(ngModel)]="order.billingStreet"/>
+            </div>
+        </div>
+        <div class="slds-form-element__row">
+            <div class="slds-form-element slds-size--1-of-2">
+                <label class="slds-form-element__label" attr.for="billingCity">City</label>
+                <input id="billingCity" class="slds-input" type="text" placeholder="BILLING CITY" [(ngModel)]="order.billingCity"/>
+            </div>
+            <div class="slds-form-element slds-size--1-of-2">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" attr.for="billingState">State</label>
+                    <div class="slds-form-element__control">
+                        <div class="slds-select_container">
+                            <select id="billingState" class="slds-select" size="1" [(ngModel)]="order.billingState" >
+                                <option value='' disabled >BILLING STATE</option>
+                                <option *ngFor="let opt of stateOptions" [value]="opt.value">{{opt.label}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slds-form-element__row">
+            <div class="slds-form-element slds-size--1-of-2">
+                <label class="slds-form-element__label" attr.for="billingPostalCode">Postal Code</label>
+                <input id="billingPostalCode" class="slds-input" type="text" placeholder="BILLING POSTAL CODE" [(ngModel)]="order.billingPostalCode"/>
+            </div>
+            <div class="slds-form-element slds-size--1-of-2"></div>
+        </div>
+    </div>
+</fieldset>

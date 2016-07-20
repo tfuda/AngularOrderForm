@@ -1,0 +1,32 @@
+<td scope="row">
+    <button class="slds-button slds-button--icon" >
+        <svg aria-hidden="true" class="slds-button__icon">
+            <use xlink:href="../node_modules/@salesforce-ux/design-system/assets/icons/action-sprite/svg/symbols.svg#remove"></use>
+        </svg>
+        <span class="slds-assistive-text">Delete Item</span>
+    </button>
+</td>
+<td scope="row">
+    <div class="slds-truncate">{{item.name}}</div>
+</td>
+<td>
+    <div class="slds-truncate">{{item.description}}</div>
+</td>
+<td>
+    <div class="slds-truncate">{{item.quantity}}</div>
+</td>
+<td>
+    <div class="slds-truncate">{{item.unitPrice | currency:'USD':true:'1.2-2'}}</div>
+</td>
+<td>
+    <div class="slds-truncate">{{item.unitFee | currency:'USD':true:'1.2-2'}}</div>
+</td>
+<td>
+    <div class="slds-truncate">{{item.subtotal | currency:'USD':true:'1.2-2'}}</div>
+</td>
+<td>
+    <div class="slds-truncate">{{item.discount | currency:'USD':true:'1.2-2'}}</div>
+</td>
+<td>
+    <div class="slds-truncate">{{item.total | currency:'USD':true:'1.2-2'}}</div>
+</td>

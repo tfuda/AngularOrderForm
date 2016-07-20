@@ -1,0 +1,41 @@
+<table class="item-table slds-table slds-table--bordered slds-table--cell-buffer">
+    <thead>
+    <tr class="slds-text-heading--label">
+        <th scope="col">
+            <button class="slds-button slds-button--icon" (click)="onDeleteAllClick($event)">
+                <svg aria-hidden="true" class="slds-button__icon">
+                    <use xlink:href="../node_modules/@salesforce-ux/design-system/assets/icons/action-sprite/svg/symbols.svg#remove"></use>
+                </svg>
+                <span class="slds-assistive-text">Delete All Items</span>
+            </button>
+        </th>
+        <th scope="col">
+            <div class="slds-truncate">Item Name</div>
+        </th>
+        <th scope="col">
+            <div class="slds-truncate">Description</div>
+        </th>
+        <th scope="col">
+            <div class="slds-truncate">Quantity</div>
+        </th>
+        <th scope="col">
+            <div class="slds-truncate">Unit Price</div>
+        </th>
+        <th scope="col">
+            <div class="slds-truncate">Unit Fee</div>
+        </th>
+        <th scope="col">
+            <div class="slds-truncate">Subtotal</div>
+        </th>
+        <th scope="col">
+            <div class="slds-truncate">Discount</div>
+        </th>
+        <th scope="col">
+            <div class="slds-truncate">Item Total</div>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr class="item-row" *ngFor="let item of itemList" [item]="item"></tr>
+    </tbody>
+</table>

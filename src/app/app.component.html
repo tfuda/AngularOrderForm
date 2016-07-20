@@ -1,0 +1,73 @@
+<div class="slds">
+    <div class="slds-grid slds-wrap slds-grid--pull-padded slds-p-around--medium">
+        <div class="slds-col--padded slds-size--1-of-1 slds-p-around--medium item-table" [itemList]="order.itemList" (deleteAllItems)="order.onDeleteAllItems()"></div>
+        <div class="slds-col--padded slds-size--1-of-1 slds-p-around--medium">
+            <fieldset class="slds-form--compound">
+                <legend class="slds-form-element__label">Order Details</legend>
+                <div class="slds-form-element__group">
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size--1-of-1">
+                            <label class="slds-form-element__label">Item Subtotal</label>
+                            <span class="slds-input">{{order.itemTotal | currency:'USD':true:'1.2-2'}}</span>
+                        </div>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size--1-of-1">
+                            <label class="slds-form-element__label">Order Fee</label>
+                            <span class="slds-input">{{order.orderFee | currency:'USD':true:'1.2-2'}}</span>
+                        </div>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size--1-of-1">
+                            <label class="slds-form-element__label">Delivery Fee</label>
+                            <span class="slds-input">{{order.deliveryFee | currency:'USD':true:'1.2-2'}}</span>
+                        </div>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size--1-of-1">
+                            <label class="slds-form-element__label" for="donationAmount">Donation Amount</label>
+                            <input id="donationAmount" class="slds-input" type="number"/>
+                        </div>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size--1-of-1">
+                            <label class="slds-form-element__label">Order Total</label>
+                            <span class="slds-input">{{order.orderTotal | currency:'USD':true:'1.2-2'}}</span>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="slds-form--compound">
+                <legend class="slds-form-element__label">Buyer Information</legend>
+                <div class="form-element__group">
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size--1-of-2">
+                            <label class="slds-form-element__label" for="firstName">First Name</label>
+                            <input id="firstName" class="slds-input" type="text" />
+                        </div>
+                        <div class="slds-form-element slds-size--1-of-2">
+                            <label class="slds-form-element__label" for="lastName">Last Name</label>
+                            <input id="lastName" class="slds-input" type="text"/>
+                        </div>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size--1-of-2">
+                            <label class="slds-form-element__label" for="email">Email</label>
+                            <input id="email" class="slds-input" type="email"/>
+                        </div>
+                        <div class="slds-form-element slds-size--1-of-2">
+                            <label class="slds-form-element__label" for="phone">Phone</label>
+                            <input id="phone" class="slds-input" type="text" />
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <billing-address [order]="order"></billing-address>
+            <delivery-method [order]="order" (deliveryMethodChanged)="order.onDeliveryMethodChange($event)"></delivery-method>
+            <div class="slds-p-top--medium" *ngIf="order.deliveryMethod === 'Ship'" >
+                <a href="#" class="slds-button slds-button--brand slds-m-bottom--medium" (click)="onCopyBillingToShippingClick($event)">Copy Billing Address</a>
+                <shipping-address [order]="order"></shipping-address>
+            </div>
+        </div>
+    </div>
+</div>
