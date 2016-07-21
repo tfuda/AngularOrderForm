@@ -1,6 +1,7 @@
 import {Component,Input,Output,EventEmitter} from '@angular/core';
 import {Item} from './item';
 import {ItemRowComponent} from './item-row.component';
+import {OrderService} from './order.service';
 
 @Component({
     selector: 'div.item-table',
@@ -9,9 +10,10 @@ import {ItemRowComponent} from './item-row.component';
 })
 export class ItemTableComponent {
     @Input() itemList: Item[];
-    @Output() deleteAllItems: EventEmitter<any> = new EventEmitter();
+    @Input() orderService: OrderService;
     constructor() {}
     onDeleteAllClick(evt: any) {
-        this.deleteAllItems.emit(evt);
+        evt.preventDefault();
+        this.orderService.onDeleteAllItems();
     }
 }

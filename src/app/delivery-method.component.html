@@ -4,22 +4,22 @@
         <div class="slds-radio--button-group">
             <label class="slds-button slds-radio--button" attr.for="email">
                 <input id="email" name="deliveryMethod" type="radio" value="Email"
-                       [checked]="order.deliveryMethod === 'Email'" (click)="onClick($event)" />
+                       [checked]="order.deliveryMethod === 'Email'" (click)="onDeliveryMethodChange($event)" />
                 <span class="slds-radio--faux">Email</span>
             </label>
             <label class="slds-button slds-radio--button" attr.for="ship">
                 <input id="ship" name="deliveryMethod" type="radio" value="Ship"
-                       [checked]="order.deliveryMethod === 'Ship'" (click)="onClick($event)" />
+                       [checked]="order.deliveryMethod === 'Ship'" (click)="onDeliveryMethodChange($event)" />
                 <span class="slds-radio--faux">Ship</span>
             </label>
             <label class="slds-button slds-radio--button" attr.for="willCall">
                 <input id="willCall" name="deliveryMethod" type="radio" value="Will Call"
-                       [checked]="order.deliveryMethod === 'Will Call'" (click)="onClick($event)" />
+                       [checked]="order.deliveryMethod === 'Will Call'" (click)="onDeliveryMethodChange($event)" />
                 <span class="slds-radio--faux">Will Call</span>
             </label>
             <label class="slds-button slds-radio--button" attr.for="walkUp">
                 <input id="walkUp" name="deliveryMethod" type="radio" value="Walk-up"
-                       [checked]="order.deliveryMethod === 'Walk-up'" (click)="onClick($event)" />
+                       [checked]="order.deliveryMethod === 'Walk-up'" (click)="onDeliveryMethodChange($event)" />
                 <span class="slds-radio--faux">Walk-up</span>
             </label>
         </div>

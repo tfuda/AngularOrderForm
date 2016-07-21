@@ -1,5 +1,5 @@
 <td scope="row">
-    <button class="slds-button slds-button--icon" >
+    <button class="slds-button slds-button--icon" (click)="onDeleteItemClick($event)" [attr.data-item-index]="itemIndex">
         <svg aria-hidden="true" class="slds-button__icon">
             <use xlink:href="../node_modules/@salesforce-ux/design-system/assets/icons/action-sprite/svg/symbols.svg#remove"></use>
         </svg>
